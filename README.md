@@ -6,7 +6,7 @@ The application utilizes machine learning models, including simple classifiers, 
 The objective is to demonstrate expertise in data preparation, model development, evaluation, and deployment using Python and TensorFlow.
 
 ## __<center>Dataset</center>__
-The `Multi-class Weather Dataset (MWD)`(https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/dataset2.zip) consists of 1,125 labeled images representing various weather conditions:
+The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/dataset2.zip) consists of 1,125 labeled images representing various weather conditions:
 - Classes: Cloudy, Shine, Rain, and Snow.
 - Dataset distribution:
 **Training:** 70% of the data used for training the model.
