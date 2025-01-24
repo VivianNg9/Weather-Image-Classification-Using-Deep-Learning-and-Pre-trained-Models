@@ -24,10 +24,15 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 <details>
   <summary>Training Set Label Distribution:</summary>
  Image label
+  
 sunrise    255
+
 cloudy     208
+
 shine      179
+
 rain       142
+
 Name: count, dtype: int64
 </details>
 
