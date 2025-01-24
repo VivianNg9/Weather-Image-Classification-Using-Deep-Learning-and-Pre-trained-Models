@@ -15,7 +15,34 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 - The `random_state=42` ensures reproducibility of the splits.
 
 ## __<center>Project Environment</center>__
-
+**Programming Language**: Python
+**Frameworks and Libraries**: TensorFlow, Keras, Numpy, Pandas, Matplotlib. 
 
 ## __<center>Project Workflow</center>__
+### 1. Data Partition, Preprocessing and Preparation 
+1.1. Data Partition 
+<details>
+  <summary>Training Set Label Distribution:</summary>
+ Image label
+sunrise    255
+cloudy     208
+shine      179
+rain       142
+Name: count, dtype: int64
+</details>
 
+Validation Set Label Distribution:
+ Image label
+sunrise    52
+cloudy     47
+shine      39
+rain       31
+Name: count, dtype: int64
+
+Test Set Label Distribution:
+ Image label
+sunrise    49
+cloudy     45
+rain       40
+shine      35
+Name: count, dtype: int64
