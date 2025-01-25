@@ -112,4 +112,24 @@ training_plot(['loss', 'accuracy'], history_simple_model);
 
 ![Simple Model1](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/simple%20model1.png)
 
+**Simple Model Summary**
+- The model consists of two layers:
+  - **Flatten Layer**: Converts the input image (230x230x3) into a 1D vector of shape (158,700)
+  - **Dense Layer**: A fully connected layer with 4 neurons (one for each class), using the *softmax* activation function. This output layer provides probabilities for each class. 
+- The model has a total of 634,804 trainable parameters. These parameters will be updated during training to optimize the model's performance on the classification task.
 
+  **Training Loss**
+- The training loss drop dramatically during the first epoch, from a very high value (>20) to around 5. This indicates that the model is quickly learning from the data in the initial stages.
+- After the first epoch, the loss continues to decrease but with more fluctiations, suggesting that the model is still learning but the rate of improvement is slowing down.
+
+**Validation Loss**
+- The validation loss starts off much lower than the training loss but fluctutes over the epochs.
+- The instability in the validation loss, especially around epochs 2 and 4, suggests that the model may be starting to *overfit* to the training data, as the loss does not consistently decrease.
+
+**Training Accuracy**
+- The training accuracy improves significantly from ~45% in the first epoch to around 75% by the fifth epoch.
+
+**Validation Accuracy**
+- The validation accuracy also improves over time, starting around 50% and reaching 70-75% by the fifth epoch. 
+- The validation accuracy follows the training accuracy closely, indicating that the model is generalizing relatively well. However, the small drop in the final validation accuaracy suggests slight overfitting. 
+  
