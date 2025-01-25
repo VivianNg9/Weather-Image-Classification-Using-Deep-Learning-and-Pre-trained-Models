@@ -186,3 +186,11 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 - The validation accuracy is initially lower than the training accuracy but increases steadily, peaking around `81.43%` after a few epochs. However, it fluctuates slightly, indicating that there could be small amounts of overfitting, but nothing severe.
 
 **The complex model (`Model 2`) achieved an accuracy of 75.15% on the test dataset.**
+
+**Accuracy Test**
+| Class | Accuracy |
+| -------- | ------- |
+| Cloudy | 0.65 |
+| Rain | 0.94 |
+| Sunrise | 0.96 |
+| Shine | 0.43 |
