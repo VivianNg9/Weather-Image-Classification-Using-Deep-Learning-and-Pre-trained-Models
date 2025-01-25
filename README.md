@@ -124,7 +124,7 @@ def build_complex_model(hp):
     print(model_complex.summary())
     return model_complex
 ```
-</detail>
+</details>
 
 <details>
   <summary>Click to view: Hyperparameter tuning with Keras Tuner:</summary>
@@ -162,5 +162,5 @@ history_complex_model = best_model_complex.fit(
 # Utilize the existing training_plot function for visualization
 training_plot(['loss', 'accuracy'], history_complex_model);
 ```
-</detail>
+</details>
 
