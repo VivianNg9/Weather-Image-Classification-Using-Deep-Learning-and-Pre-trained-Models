@@ -164,3 +164,25 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 ```
 </details>
 
+![Complex Model](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Complex%20Model%20.png)
+
+![Complex Model2](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Complex%20Model2.png)
+
+- The high number of parameters (`25,392,804`) shows that the model is complex, likely able to capture intricate patterns in the data. However, such complexity may require regularization (dropout) to avoid overfitting.
+- The dense layer with `160 neurons` strikes a balance between capacity and overfitting. Keras Tuner identified this size as optimal during the hyperparameter search.
+
+**Training Loss** 
+- The training loss decreases significantly from approximately `12 to 1` over the first few epoches indicating that the model is learning quickly and effectively.
+- After epoch 3, the training loss plateaus around `0.5`, showing that the model reaches a stable state after a few epochs.
+
+**Validation Loss** 
+- The validation loss starts around 2 and fluctuates slightly over the epochs but remains relatively stable after epoch 4.
+- The small gap between training and validationloss => the model is not significantly overfitting, which is a good sign. 
+
+**Training Accuracy**
+- The training accuracy improves rapidly, reaching over 80% after a few epochs => The model learns the training data effectively.
+
+**Validation Accuracy**
+- The validation accuracy is initially lower than the training accuracy but increases steadily, peaking around `81.43%` after a few epochs. However, it fluctuates slightly, indicating that there could be small amounts of overfitting, but nothing severe.
+
+**The complex model (`Model 2`) achieved an accuracy of 75.15% on the test dataset.**
