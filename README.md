@@ -81,7 +81,7 @@ training_plot(['loss', 'accuracy'], history_simple_model);
   - **Dense Layer**: A fully connected layer with 4 neurons (one for each class), using the *softmax* activation function. This output layer provides probabilities for each class. 
 - The model has a total of 634,804 trainable parameters. These parameters will be updated during training to optimize the model's performance on the classification task.
 
-  **Training Loss**
+**Training Loss**
 - The training loss drop dramatically during the first epoch, from a very high value (>20) to around 5. This indicates that the model is quickly learning from the data in the initial stages.
 - After the first epoch, the loss continues to decrease but with more fluctiations, suggesting that the model is still learning but the rate of improvement is slowing down.
 
