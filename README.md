@@ -22,44 +22,6 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 ## __<center>Project Workflow</center>__
 ### 1. Data Partition, Preprocessing and Preparation 
 #### 1.1. Data Partition 
-<details>
-  <summary>Click to view: Training Set Label Distribution:</summary>
-
-| Image label |         |
-| --------    | ------- |
-| sunrise     | 255     |
-| cloudy      | 208     |
-| shine       | 179     |
-| rain        | 142     |
-
-Name: count, dtype: int64
-</details>
-
-<details>
-  <summary>Click to view: Validation Set Label Distribution:</summary>
-
-| Image label |         |
-| --------    | ------- |
-| sunrise     | 52      |
-| cloudy      | 47      |
-| shine       | 39      |
-| rain        | 31      |
-
-Name: count, dtype: int64
-</details>
-
-<details>
-  <summary>Click to view: Test Set Label Distribution:</summary>
-
-| Image label |         |
-| --------    | ------- |
-| sunrise     | 49      |
-| cloudy      | 45      |
-| shine       | 40      |
-| rain        | 35      |
-
-Name: count, dtype: int64
-</details>
 
 Visualize Label Distribution 
 ![Label Distribution](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Label%20Distribution.png)
