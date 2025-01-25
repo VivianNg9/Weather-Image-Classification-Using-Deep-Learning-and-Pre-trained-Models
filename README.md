@@ -32,9 +32,9 @@ Visualize Label Distribution
 - The model's ability to generalize across all classes, especially the minority ones, will be a critical aspect to monoritor. The high frequency `sunrise` images may cause the model to be overly confident in predicting this label, potentially skewing performance.
 
 #### 1.2. Preprocessing and Preparation 
-- By resizing the images to a fixed values to the [0,1] range, the data becomes uniform.
-- Resizing all images to the same shape and normalizing their pixel values ensures consistency, which is important for efficient model training. A deep learning model typically performs better when input images are scaled to a fixed size and normalized.
-- The CSV file contains paths to the images and their respective labels. This function converts those paths into images and ensurees the labels are transformed into numeric format, which is crucial for classification tasks. 
+
+- Resize images to a fixed shape and normalize to [0,1] for uniformity and efficient training.
+- Convert image paths and labels from CSV files into numeric format for classification.
 
 Visualize a Batch of Images 
 
