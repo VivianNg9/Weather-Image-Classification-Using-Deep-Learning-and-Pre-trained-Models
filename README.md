@@ -16,6 +16,7 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 
 ## __<center>Project Environment</center>__
 **Programming Language**: Python
+
 **Frameworks and Libraries**: TensorFlow, Keras, Numpy, Pandas, Matplotlib. 
 
 ## __<center>Project Workflow</center>__
@@ -137,20 +138,29 @@ training_plot(['loss', 'accuracy'], history_simple_model);
 
 #### 2.2. A More Complex Classifier (`Model 2`)
 
-Build the Complex Model 
+<details>
+  <summary>Click to view: Build the Complex Model:</summary>
+  
+```python
+def build_complex_model(hp):
+    # Adapting the input shape and CLASS_NAMES based on the current task's dataset
+    model_complex = keras.Sequential()
+    model_complex.add(keras.layers.Flatten(input_shape=(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS)))
+    # Tuning the number of hidden layers and sizes, with dropout
+    for i in range(hp.Int('num_hidden', 1, 3)):
+        # The number of neurons in each layer to vary between 32 and 512, increasing in step of 32
+        model_complex.add(keras.layers.Dense(hp.Int(f'hidden_size_{i}', 32, 512, step=32), activation='relu')) # 'relu'introduces non-linearity and helps the model learn complex patterns.
+        model_complex.add(keras.layers.Dropout(hp.Float(f'dropout_{i}', 0.0, 0.9))) # Tuning dropout rate 
+    model_complex.add(keras.layers.Dense(len(CLASS_NAMES), activation='softmax')) # 'softmax' ensures that the output is a probability distribution across the classes.
 
-**Number of Hidden Layers (num_hidden)**<p>
- - 1 to 3 hidden layers <p>
- - *Justification*: 1 to 3 layers are used to let the model detect patterns without being too complex. More layers can learn complicated patterns, but too many could memorize the data instead of learning from it (overfitting).<p>
+    # Compile the model 
+    model_complex.compile(
+        optimizer=optimizers.Adam(learning_rate=hp.Float('lrate', 1e-4, 1e-1, sampling='log')),
+        loss=losses.SparseCategoricalCrossentropy(), # 'SparseCategoricalCrossentropy': for multi-class classification with integer labels. 
+        metrics=['accuracy'])
+    
+    print(model_complex.summary())
+    return model_complex
+```
+</detail>
 
-**Sizes of Hidden Layers (hidden_size)**<p>
-- From 32 to 512 neurons, in steps of 32 <p>
-- *Justification*: The layers have between 32 to 512 neurons, adjustable by 32 each time. This range supports to find the spot between a model that's too simple or too complex.<p>
-
-**Dropout Rate (dropout)**<p>
-- 0.0 to 0.9 <p>
-- *Justification*: Set between 0% to 90%, dropout randomly turns off some neurons during training. This helps the model be robust and not too dependent on any one piece of data.<p>
-
-**Learning Rate (lrate)**<p>
--  1e-4 to 1e-1 <p>
-- *Justification*: It varies from 1e-4 to 1e-1. This range is broad enough to find a learning rate that's not too slow (taking forever to learn) or too fast (missing the best solution).<p>
