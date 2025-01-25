@@ -35,7 +35,7 @@ Name: count, dtype: int64
 </details>
 
 <details>
-  <summary>Validation Set Label Distribution:</summary>
+  <summary>Click to view Validation Set Label Distribution:</summary>
 
 | Image label |         |
 | --------    | ------- |
