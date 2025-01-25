@@ -98,6 +98,14 @@ training_plot(['loss', 'accuracy'], history_simple_model);
 
 **The simple model (`Model 1`) achieved an accuracy of `72.19%` of the predictions made on the unseen test dataset are correct.**
 
+**Accuracy Test for (`Model 1`)**
+| Class | Accuracy |
+| -------- | ------- |
+| Cloudy | 0.94 |
+| Rain | 0.35 |
+| Sunrise | 0.92 |
+| Shine | 0.49 |
+
 #### 2.2. A More Complex Classifier (`Model 2`)
 
 <details>
@@ -187,7 +195,7 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 
 **The complex model (`Model 2`) achieved an accuracy of 75.15% on the test dataset.**
 
-**Accuracy Test**
+**Accuracy Test for (`Model 2`)**
 | Class | Accuracy |
 | -------- | ------- |
 | Cloudy | 0.65 |
