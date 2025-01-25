@@ -194,3 +194,5 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 | Rain | 0.94 |
 | Sunrise | 0.96 |
 | Shine | 0.43 |
+
+- The model performs well on `sunrise` and `rain` classes but struggles with `cloudy` and `shine`. Improving the model’s ability to distinguish between these classes through augmentation, better feature extraction, or rebalancing the dataset could significantly enhance its performance.
