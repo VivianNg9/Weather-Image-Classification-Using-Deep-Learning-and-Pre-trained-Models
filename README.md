@@ -133,4 +133,4 @@ training_plot(['loss', 'accuracy'], history_simple_model);
 - The validation accuracy also improves over time, starting around 50% and reaching 70-75% by the fifth epoch. 
 - The validation accuracy follows the training accuracy closely, indicating that the model is generalizing relatively well. However, the small drop in the final validation accuaracy suggests slight overfitting. 
 
-** The simple model (`Model 1`) achieved an accuracy of `72.19%` of the predictions made on the unseen test dataset are correct.
+**The simple model (`Model 1`) achieved an accuracy of `72.19%` of the predictions made on the unseen test dataset are correct.**
