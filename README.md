@@ -79,7 +79,9 @@ Visualize a Batch of Images
 
 ### 2. Simple Classifier
 #### 2.1. First Classifier (`Model 1`)
-Build a Simple Model 
+<details>
+  <summary>Click to view: Build a Simple Model :</summary>
+  
 ```python
 def build_simple_model(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS, CLASS_NAMES, lrate=0.001):
     model_simple = keras.Sequential([
@@ -104,6 +106,7 @@ history_simple_model = simple_model.fit(train_dataset, validation_data=validatio
 # Utilize the existing training_plot function for visualization
 training_plot(['loss', 'accuracy'], history_simple_model);
 ```
+</details>
 ![Simple Model](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Simple%20Model.png)
 
 ![Simple Model1](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/simple%20model1.png)
