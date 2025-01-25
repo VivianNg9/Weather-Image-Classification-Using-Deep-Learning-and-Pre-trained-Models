@@ -126,3 +126,41 @@ def build_complex_model(hp):
 ```
 </detail>
 
+<details>
+  <summary>Click to view: Hyperparameter tuning with Keras Tuner:</summary>
+  
+```python
+# Initialize the BayesianOptimization tuner
+tuner = kt.BayesianOptimization(
+    build_complex_model,
+    objective='val_accuracy',
+    max_trials=10,
+    num_initial_points=2,
+    overwrite=True
+)
+
+
+# Conduct the hyperparameter search using the training and validation datasets
+tuner.search(
+    train_dataset, 
+    epochs=10,
+    validation_data=validation_dataset,
+    callbacks=[keras.callbacks.EarlyStopping(patience=3)]
+)
+
+# Retrieve the best hyperparameters 
+best_hp_complex_model  = tuner.get_best_hyperparameters(num_trials=1)[0]
+# Rebuild the best model
+best_model_complex = build_complex_model(best_hp_complex_model)
+
+# Train the best model
+history_complex_model = best_model_complex.fit(
+    train_dataset, validation_data=validation_dataset, epochs=10,
+    callbacks=[keras.callbacks.EarlyStopping(patience=2)]
+)
+
+# Utilize the existing training_plot function for visualization
+training_plot(['loss', 'accuracy'], history_complex_model);
+```
+</detail>
+
