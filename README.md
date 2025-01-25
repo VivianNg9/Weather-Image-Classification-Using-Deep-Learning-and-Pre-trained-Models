@@ -134,3 +134,23 @@ training_plot(['loss', 'accuracy'], history_simple_model);
 - The validation accuracy follows the training accuracy closely, indicating that the model is generalizing relatively well. However, the small drop in the final validation accuaracy suggests slight overfitting. 
 
 **The simple model (`Model 1`) achieved an accuracy of `72.19%` of the predictions made on the unseen test dataset are correct.**
+
+#### 2.2. A More Complex Classifier (`Model 2`)
+
+Build the Complex Model 
+
+**Number of Hidden Layers (num_hidden)**<p>
+ - 1 to 3 hidden layers <p>
+ - *Justification*: 1 to 3 layers are used to let the model detect patterns without being too complex. More layers can learn complicated patterns, but too many could memorize the data instead of learning from it (overfitting).<p>
+
+**Sizes of Hidden Layers (hidden_size)**<p>
+- From 32 to 512 neurons, in steps of 32 <p>
+- *Justification*: The layers have between 32 to 512 neurons, adjustable by 32 each time. This range supports to find the spot between a model that's too simple or too complex.<p>
+
+**Dropout Rate (dropout)**<p>
+- 0.0 to 0.9 <p>
+- *Justification*: Set between 0% to 90%, dropout randomly turns off some neurons during training. This helps the model be robust and not too dependent on any one piece of data.<p>
+
+**Learning Rate (lrate)**<p>
+-  1e-4 to 1e-1 <p>
+- *Justification*: It varies from 1e-4 to 1e-1. This range is broad enough to find a learning rate that's not too slow (taking forever to learn) or too fast (missing the best solution).<p>
