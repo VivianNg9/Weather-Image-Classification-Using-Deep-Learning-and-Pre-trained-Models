@@ -79,7 +79,7 @@ Visualize a Batch of Images
 ### 2. Simple Classifier
 #### 2.1. First Classifier (`Model 1`)
 Build a Simple Model 
-``` 
+```python
 def build_simple_model(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS, CLASS_NAMES, lrate=0.001):
     model_simple = keras.Sequential([
         keras.layers.Flatten(input_shape=(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS)), # Flatten the input image 
