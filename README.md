@@ -23,9 +23,8 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 1.1. Data Partition 
 <details>
   <summary>Training Set Label Distribution:</summary>
- Image label
 
-| Image label |  |
+| Image label |         |
 | --------    | ------- |
 | sunrise     | 255     |
 | cloudy      | 208     |
@@ -35,18 +34,29 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 Name: count, dtype: int64
 </details>
 
-Validation Set Label Distribution:
- Image label
-sunrise    52
-cloudy     47
-shine      39
-rain       31
-Name: count, dtype: int64
+<details>
+  <summary>Validation Set Label Distribution:</summary>
 
-Test Set Label Distribution:
- Image label
-sunrise    49
-cloudy     45
-rain       40
-shine      35
+| Image label |         |
+| --------    | ------- |
+| sunrise     | 52      |
+| cloudy      | 47      |
+| shine       | 39      |
+| rain        | 31      |
+
 Name: count, dtype: int64
+</details>
+
+<details>
+  <summary>Test Set Label Distribution:</summary>
+
+| Image label |         |
+| --------    | ------- |
+| sunrise     | 49      |
+| cloudy      | 45      |
+| shine       | 40      |
+| rain        | 35      |
+
+Name: count, dtype: int64
+</details>
+
