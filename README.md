@@ -74,6 +74,7 @@ Visualize Label Distribution
 - The CSV file contains paths to the images and their respective labels. This function converts those paths into images and ensurees the labels are transformed into numeric format, which is crucial for classification tasks. 
 
 Visualize a Batch of Images 
+
 ![Batch of Images](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Batch%20of%20Images.png)
 
 ### 2. Simple Classifier
@@ -103,5 +104,8 @@ history_simple_model = simple_model.fit(train_dataset, validation_data=validatio
 # Utilize the existing training_plot function for visualization
 training_plot(['loss', 'accuracy'], history_simple_model);
 ```
+![Simple Model](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Simple%20Model.png)
+
+![Simple Model1](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/simple%20model1.png)
 
 
