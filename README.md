@@ -107,6 +107,7 @@ history_simple_model = simple_model.fit(train_dataset, validation_data=validatio
 training_plot(['loss', 'accuracy'], history_simple_model);
 ```
 </details>
+
 ![Simple Model](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Simple%20Model.png)
 
 ![Simple Model1](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/simple%20model1.png)
