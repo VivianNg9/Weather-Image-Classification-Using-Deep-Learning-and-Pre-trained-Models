@@ -60,3 +60,11 @@ Name: count, dtype: int64
 Name: count, dtype: int64
 </details>
 
+Visulizaing Label Distribution 
+![Label Distribution](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Label%20Distribution.png)
+
+- The `sunrise` label is the most frequent across all sets, which could lead to the model favoring predictions of this class. 
+- The training, validation, and test sets maintain similar proportions of each label, ensuring that the model is evaluated on representative sample. This balanced split enhances the reliability of validation and test results, ensuring that the model generalizes well. 
+- The validation and test sets contain a balanced representation of each label, ensuring a fair evaluation of model performance on unseen data.
+- The model's ability to generalize across all classes, especially the minority ones, will be a critical aspect to monoritor. The high frequency `sunrise` images may cause the model to be overly confident in predicting this label, potentially skewing performance.
+
