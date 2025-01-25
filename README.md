@@ -22,7 +22,7 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 ### 1. Data Partition, Preprocessing and Preparation 
 1.1. Data Partition 
 <details>
-  <summary>Training Set Label Distribution:</summary>
+  <summary>Click to view: Training Set Label Distribution:</summary>
 
 | Image label |         |
 | --------    | ------- |
@@ -35,7 +35,7 @@ Name: count, dtype: int64
 </details>
 
 <details>
-  <summary>Click to view Validation Set Label Distribution:</summary>
+  <summary>Click to view: Validation Set Label Distribution:</summary>
 
 | Image label |         |
 | --------    | ------- |
@@ -48,7 +48,7 @@ Name: count, dtype: int64
 </details>
 
 <details>
-  <summary>Test Set Label Distribution:</summary>
+  <summary>Click to view: Test Set Label Distribution:</summary>
 
 | Image label |         |
 | --------    | ------- |
