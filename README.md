@@ -1,7 +1,7 @@
 # __<center> Weather Image Classification Using Deep Learning and Pre-trained Models </center>__
 
 ## __<center>Overview</center>__
-This project focuses on building an end-to-end image classification application to classify weather conditions using the Multi-class Weather Dataset (MWD).
+[This project](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/Weather%20Image%20Classification%20Using%20Deep%20Learning%20and%20Pre-trained%20Models%20.ipynb) focuses on building an end-to-end image classification application to classify weather conditions using the Multi-class Weather Dataset (MWD).
 The application utilizes machine learning models, including simple classifiers, advanced convolutional neural networks (ConvNets), and pre-trained models like MobileNet. 
 The objective is to demonstrate expertise in data preparation, model development, evaluation, and deployment using Python and TensorFlow.
 
