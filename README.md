@@ -212,7 +212,7 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 - `Model 2` demonstrates a lower degree of overfirring, as evidenced by the smaller gap between training and validation accuracies (`5%` compared to `8% for Model 1`). This indicates that `Model 2` is more capable of generalizing to new data, and the use of dropour likely hleped mitigate overfitting by promoting better regularization.
 
 ### 3. A more complex classifier 
-#### 3.1 Use ConvNets 
+#### 3.1 Using ConvNets 
 <details>
   <summary>Click to view: Build the model using ConvNets:</summary>
  
@@ -286,7 +286,7 @@ With a test accuracy of 88.76%, this ConvNets model performs exceptionally well,
 `Shine (69%)` could benefit from further improvement. Techniques like data augmentation (e.g., brightness adjustments or rotations) or class weighting could help the model learn more about this class.
 `Rain (88%)` might benefit from enhanced feature extraction, possibly by adding more convolutional layers or using different kernel sizes to capture finer details.
 
-#### 3.2 Use pre-trained models 
+#### 3.2 Using pre-trained models 
 <details>
   <summary>Click to view: Build the model using MobileNet:</summary>
  
