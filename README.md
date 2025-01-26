@@ -212,6 +212,8 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 - `Model 2` demonstrates a lower degree of overfirring, as evidenced by the smaller gap between training and validation accuracies (`5%` compared to `8% for Model 1`). This indicates that `Model 2` is more capable of generalizing to new data, and the use of dropour likely hleped mitigate overfitting by promoting better regularization.
 
 ### 3. A more complex classifier 
+
+![CNN](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/CNNs.png)
 #### 3.1 Using ConvNets 
 
 <details>
