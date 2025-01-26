@@ -268,7 +268,7 @@ def build_ConvNets (hp):
 
 **The ConvNets model achieved an accuracy of `88.76%` on the test dataset.**
 
-**Accuracy Test for (`ConvNets Model`)**
+**Accuracy Test for `ConvNets Model`**
 | Class | Accuracy |
 | -------- | ------- |
 | Cloudy | 0.96 |
