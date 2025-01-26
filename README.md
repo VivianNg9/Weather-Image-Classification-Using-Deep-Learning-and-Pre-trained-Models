@@ -40,7 +40,7 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 ![Batch of Images](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Batch%20of%20Images.png)
 
 ### 2. Simple Classifier
-#### 2.1. First Classifier (`Model 1`)
+#### 2.1. First Classifier `Model 1`
 <details>
   <summary>Click to view: Build a Simple Model :</summary>
   
@@ -95,9 +95,9 @@ training_plot(['loss', 'accuracy'], history_simple_model);
 - The validation accuracy also improves over time, starting around 50% and reaching 70-75% by the fifth epoch. 
 - The validation accuracy follows the training accuracy closely, indicating that the model is generalizing relatively well. However, the small drop in the final validation accuaracy suggests slight overfitting. 
 
-**The simple model (`Model 1`) achieved an accuracy of `72.19%` of the predictions made on the unseen test dataset are correct.**
+**The simple model `Model 1` achieved an accuracy of `72.19%` of the predictions made on the unseen test dataset are correct.**
 
-**Accuracy Test for (`Model 1`)**
+**Accuracy Test for `Model 1`**
 | Class | Accuracy |
 | -------- | ------- |
 | Cloudy | 0.94 |
@@ -105,7 +105,7 @@ training_plot(['loss', 'accuracy'], history_simple_model);
 | Sunrise | 0.92 |
 | Shine | 0.49 |
 
-#### 2.2. A More Complex Classifier (`Model 2`)
+#### 2.2. A More Complex Classifier `Model 2`
 
 <details>
   <summary>Click to view: Build the Complex Model:</summary>
@@ -285,3 +285,50 @@ With a test accuracy of 88.76%, this ConvNets model performs exceptionally well,
 **Class-Specific Challenges**:<p>
 `Shine (69%)` could benefit from further improvement. Techniques like data augmentation (e.g., brightness adjustments or rotations) or class weighting could help the model learn more about this class.
 `Rain (88%)` might benefit from enhanced feature extraction, possibly by adding more convolutional layers or using different kernel sizes to capture finer details.
+
+#### 3.2 Use pre-trained models 
+<details>
+  <summary>Click to view: Build the model using MobileNet:</summary>
+ 
+```python
+from tensorflow.keras.optimizers import Adam
+
+IMG_HEIGHT_1 = 224
+IMG_WIDTH_1 = 224
+IMG_CHANNELS =3
+# Build model using MobileNet
+def build_MobileNet():
+    # Load MobileNet with pre-trained ImageNet weights, excluding the top layer
+    base_model = tf.keras.applications.MobileNet(
+        weights="imagenet",
+        include_top=False,
+        input_shape=(IMG_HEIGHT_1, IMG_WIDTH_1, IMG_CHANNELS),
+        pooling="avg"  # Use global average pooling
+    )
+    
+    # Freeze the pre-trained model weights during training
+    base_model.trainable = False
+
+    # Create a new sequential model and add the pre-trained base model
+    model_MobileNet = tf.keras.Sequential([base_model])
+    model_MobileNet.add(tf.keras.layers.Dense(units=128, activation='relu'))
+    model_MobileNet.add(tf.keras.layers.Dropout(rate=0.5))
+
+    # Add the output classification layer with a softmax activation
+    model_MobileNet.add(tf.keras.layers.Dense(len(CLASS_NAMES), activation='softmax'))
+
+    # Compile the model
+    model_MobileNet.compile(
+        optimizer=Adam(),
+        loss='sparse_categorical_crossentropy',  # for integer 
+        metrics=['accuracy']
+    )
+
+    return model_MobileNet
+model_MobileNet = build_MobileNet()
+model_MobileNet.summary()
+```
+</details>
+
+
+
