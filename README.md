@@ -211,4 +211,77 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 - `Model 2`has a better accuracy on the test data, with an accuracy `75.15%`, compared to Model's test accuracy of `72.19%`. The more complex architecture allowed `Model 2` to better capture patterns and generalize to unseen data, resulturing in superior test performance.
 - `Model 2` demonstrates a lower degree of overfirring, as evidenced by the smaller gap between training and validation accuracies (`5%` compared to `8% for Model 1`). This indicates that `Model 2` is more capable of generalizing to new data, and the use of dropour likely hleped mitigate overfitting by promoting better regularization.
 
-  
+### 3. A more complex classifier 
+#### 3.1 Use ConvNets 
+<details>
+  <summary>Click to view: Build the model using ConvNets:</summary>
+ 
+``` python
+from tensorflow.keras import layers
+
+# Build the model using ConvNets
+img_size = (230, 230)  # Image size
+num_classes = len(CLASS_NAMES)
+def build_ConvNets (hp):
+    model_ConvNets = keras.Sequential()
+     # Initial Convolutional Block with Tunable Parameters
+    model_ConvNets.add(layers.Conv2D(filters=hp.Int('initial_filters', 32, 512, step=32),
+                            kernel_size=hp.Choice('initial_kernel_size', [3, 5]),
+                            activation='relu', input_shape=(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS),
+                            padding='same'))
+    model_ConvNets.add(layers.MaxPooling2D(pool_size=(2, 2)))
+    
+    # Additional Convolutional Blocks
+    # Add 1 to 3 additional Conv+Pooling blocks with tunable hyperparameters
+    for i in range(hp.Int('num_conv_blocks', 1, 3)):
+        model_ConvNets.add(layers.Conv2D(filters=hp.Int(f'filters_{i}', 32, 512, step=32),
+                                kernel_size=hp.Choice(f'kernel_size_{i}', [3, 5]),
+                                activation='relu', padding='same'))
+        model_ConvNets.add(layers.MaxPooling2D(pool_size=hp.Choice(f'pool_size_{i}', [2, 3])))
+    
+    # Flattening layer
+    model_ConvNets.add(layers.Flatten())
+    
+    # Dense Layers 
+    # Add 1 to 3 additional Conv+Pooling blocks with tunable hyperparameters
+    for i in range(hp.Int('num_dense_blocks', 1, 3)):
+        model_ConvNets.add(layers.Dense(units=hp.Int(f'dense_units_{i}', min_value=32, max_value=512, step=32),
+                               activation='relu'))
+        model_ConvNets.add(layers.Dropout(rate=hp.Float(f'dropout_{i}', min_value=0.0, max_value=0.9, step=0.1)))
+    
+    # Output Layer
+    model_ConvNets.add(layers.Dense(len(CLASS_NAMES), activation='softmax'))
+
+    # Compile the model
+    model_ConvNets.compile(optimizer=optimizers.Adam(hp.Float('learning_rate', 1e-4, 1e-2, sampling='log')),
+                  loss='sparse_categorical_crossentropy', # for integers
+                  metrics=['accuracy'])
+    
+    print(model_ConvNets.summary())
+    return model_ConvNets
+```
+</details>
+
+![ConvNets](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/ConvNets.png)
+
+![model3](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/model%203.png)
+
+**The ConvNets model achieved an accuracy of `88.76%` on the test dataset.**
+
+**Accuracy Test for (`ConvNets Model`)**
+| Class | Accuracy |
+| -------- | ------- |
+| Cloudy | 0.96 |
+| Rain | 0.88 |
+| Sunrise | 0.96 |
+| Shine | 0.69 |
+
+**Strong Overall Performance**: <p>
+With a test accuracy of 88.76%, this ConvNets model performs exceptionally well, particularly for classes like `cloudy (96%)` and `sunrise (96%)`. The use of convolutional layers clearly helps capture important spatial features from the images.
+
+**Regularization with Dropout**:<p>
+ The dropout layer helps prevent overfitting, and the closeness of the training and validation accuracy indicates that the model generalizes well to unseen data.
+
+**Class-Specific Challenges**:<p>
+`Shine (69%)` could benefit from further improvement. Techniques like data augmentation (e.g., brightness adjustments or rotations) or class weighting could help the model learn more about this class.
+`Rain (88%)` might benefit from enhanced feature extraction, possibly by adding more convolutional layers or using different kernel sizes to capture finer details.
