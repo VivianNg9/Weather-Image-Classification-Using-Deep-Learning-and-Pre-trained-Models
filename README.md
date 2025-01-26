@@ -1,7 +1,7 @@
 # __<center> Weather Image Classification Using Deep Learning and Pre-trained Models </center>__
 
 ## __<center>Overview</center>__
-This project focuses on building an end-to-end image classification application to classify weather conditions using the Multi-class Weather Dataset (MWD).
+[This project](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/Weather%20Image%20Classification%20Using%20Deep%20Learning%20and%20Pre-trained%20Models%20.ipynb) focuses on building an end-to-end image classification application to classify weather conditions using the Multi-class Weather Dataset (MWD).
 The application utilizes machine learning models, including simple classifiers, advanced convolutional neural networks (ConvNets), and pre-trained models like MobileNet. 
 The objective is to demonstrate expertise in data preparation, model development, evaluation, and deployment using Python and TensorFlow.
 
@@ -22,8 +22,7 @@ The [`Multi-class Weather Dataset (MWD)`](https://github.com/VivianNg9/Weather-I
 ## __<center>Project Workflow</center>__
 ### 1. Data Partition, Preprocessing and Preparation 
 #### 1.1. Data Partition 
-
-Visualize Label Distribution 
+ 
 ![Label Distribution](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Label%20Distribution.png)
 
 - The `sunrise` label is the most frequent across all sets, which could lead to the model favoring predictions of this class. 
@@ -36,7 +35,7 @@ Visualize Label Distribution
 - Resize images to a fixed shape and normalize to [0,1] for uniformity and efficient training.
 - Convert image paths and labels from CSV files into numeric format for classification.
 
-Visualize a Batch of Images 
+**Batch of Images**
 
 ![Batch of Images](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/Batch%20of%20Images.png)
 
@@ -204,3 +203,12 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 | Shine | 0.43 |
 
 - The model performs well on `sunrise` and `rain` classes but struggles with `cloudy` and `shine`. Improving the model’s ability to distinguish between these classes through augmentation, better feature extraction, or rebalancing the dataset could significantly enhance its performance.
+
+  
+#### 2.3. Error Analysis
+![Error Analysis](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/error%20analysis.png)
+
+- `Model 2`has a better accuracy on the test data, with an accuracy `75.15%`, compared to Model's test accuracy of `72.19%`. The more complex architecture allowed `Model 2` to better capture patterns and generalize to unseen data, resulturing in superior test performance.
+- `Model 2` demonstrates a lower degree of overfirring, as evidenced by the smaller gap between training and validation accuracies (`5%` compared to `8% for Model 1`). This indicates that `Model 2` is more capable of generalizing to new data, and the use of dropour likely hleped mitigate overfitting by promoting better regularization.
+
+  
