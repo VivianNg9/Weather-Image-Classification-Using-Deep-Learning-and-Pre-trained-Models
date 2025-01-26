@@ -213,6 +213,7 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 
 ### 3. A more complex classifier 
 #### 3.1 Using ConvNets 
+
 <details>
   <summary>Click to view: Build the model using ConvNets:</summary>
  
