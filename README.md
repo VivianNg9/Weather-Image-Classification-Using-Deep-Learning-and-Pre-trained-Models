@@ -208,7 +208,7 @@ training_plot(['loss', 'accuracy'], history_complex_model);
 #### 2.3. Error Analysis
 ![Error Analysis](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/error%20analysis.png)
 
-- `Model 2`has a better accuracy on the test data, with an accuracy `75.15%`, compared to Model's test accuracy of `72.19%`. The more complex architecture allowed `Model 2` to better capture patterns and generalize to unseen data, resulturing in superior test performance.
+- `Model 2` has a better accuracy on the test data, with an accuracy `75.15%`, compared to Model's test accuracy of `72.19%`. The more complex architecture allowed `Model 2` to better capture patterns and generalize to unseen data, resulturing in superior test performance.
 - `Model 2` demonstrates a lower degree of overfirring, as evidenced by the smaller gap between training and validation accuracies (`5%` compared to `8% for Model 1`). This indicates that `Model 2` is more capable of generalizing to new data, and the use of dropour likely hleped mitigate overfitting by promoting better regularization.
 
 ### 3. A more complex classifier 
@@ -330,5 +330,37 @@ model_MobileNet.summary()
 ```
 </details>
 
+![MobileNet](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/MobileNet1.png)
 
+![MobileNet1](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/MobileNet.png)
+
+**Loss Plot**
+- Both training and validation loss decrease consistently over the epochs.
+- Validation loss stabilizes at around 0.3, indicating that the model generalizes well without overfitting. <p>
+
+=> The steady improvement in both training and validation performance shows that the pre-trained MobileNet model, combined with the additional layers, is effective in learning the new dataset.
+
+**Accuracy Plot**
+- Training accuracy steadily improves and approaches 90%.
+- Validation accuracy also follows a similar trend, stabilizing near 0.90. <p>
+
+=> The close alignment between training and validation performance further indicates that overfitting is well-controlled because of using dropout and the learning rate schedule.
+
+**The MobileNet model achieved an accuracy of `93.49%` on the test dataset.**
+
+**Accuracy Test for `MobileNet Model`**
+| Class | Accuracy |
+| -------- | ------- |
+| Cloudy | 0.90 |
+| Rain | 1.00 |
+| Sunrise | 0.98 |
+| Shine | 0.86 |
+
+`Rain` and `sunrise` are the most easily distinguishable classes for the model, likely due to strong visual cues in the data. `Cloudy` and `shine` could benefit from further refinement, possibly by augmenting the dataset or tweaking the learning rate schedule for better differentiation.
+
+#### 3.3 Comparative Evaluation 
+
+![MobileNet Model](https://github.com/VivianNg9/Weather-Image-Classification-Using-Deep-Learning-and-Pre-trained-Models/blob/main/image/MobileNet%20Model.png)
+
+Based on the accuracy reports for different weather categories from MobileNet Model (task 3.2), it appears that the system performed best on `rain` with perfect accuracy **(1.0)**. The category `sunrise`, `cloudy` also had high accuracy, **0.98** and **0.9** relatively. The most difficult weather to detect was `shine`, with the lowest accuracy of **0.86**, indicating that the system was less effective at correctly identifying this category compared to others.
 
